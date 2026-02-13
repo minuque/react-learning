@@ -1,0 +1,447 @@
+/* React 18 学习项目样式 */
+
+/* 全局重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* 头部样式 */
+.header {
+  text-align: center;
+  padding: 30px 0;
+  background: linear-gradient(135deg, #61dafb 0%, #21a1f1 100%);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* 导航样式 */
+.nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-btn {
+  padding: 12px 24px;
+  border: none;
+  background: white;
+  color: #666;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.nav-btn.active {
+  background: #21a1f1;
+  color: white;
+}
+
+/* 主内容区 */
+.main {
+  margin-bottom: 40px;
+}
+
+/* Feature Card 样式 */
+.feature-card {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card h2 {
+  color: #21a1f1;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.feature-card h3 {
+  color: #555;
+  margin: 20px 0 12px;
+}
+
+.feature-card h4 {
+  color: #666;
+  margin: 16px 0 10px;
+}
+
+/* 演示区域 */
+.demo-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+/* 按钮样式 */
+button {
+  padding: 10px 20px;
+  margin: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #21a1f1;
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #1a8fd9;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 输入框样式 */
+input[type="text"],
+input[type="email"] {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+  border-color: #21a1f1;
+}
+
+input.pending {
+  border-color: #ffa500;
+}
+
+/* 列表样式 */
+.item-list {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  margin: 12px 0;
+}
+
+.item {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.item:hover {
+  background: #f0f8ff;
+}
+
+.item.selected {
+  background: #21a1f1;
+  color: white;
+}
+
+/* 渲染计数 */
+.render-count {
+  background: #fff3cd;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+/* 加载状态 */
+.loading-badge {
+  display: inline-block;
+  background: #ffa500;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-left: 10px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* 说明区域 */
+.explanation {
+  margin-top: 24px;
+  padding: 20px;
+  background: #e8f4fd;
+  border-radius: 8px;
+  border-left: 4px solid #21a1f1;
+}
+
+.explanation ul,
+.explanation ol {
+  margin-left: 20px;
+}
+
+.explanation li {
+  margin: 8px 0;
+}
+
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+/* 代码样式 */
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 12px 0;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* 关键点区域 */
+.key-points,
+.advanced {
+  margin-top: 20px;
+  padding: 16px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.key-points ul,
+.advanced ul {
+  margin-left: 18px;
+}
+
+.key-points li,
+.advanced li {
+  margin: 6px 0;
+}
+
+/* 生成 ID 显示 */
+.generated-id {
+  background: #1e1e1e;
+  color: #4ec9b0;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.id-display {
+  font-size: 1.4rem;
+  color: #ce9178;
+}
+
+/* 表单演示 */
+.form-demo {
+  max-width: 400px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* 结果显示 */
+.results {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.result-item.original {
+  background: #e3f2fd;
+}
+
+.result-item.deferred {
+  background: #fff3e0;
+}
+
+.result-item.computed {
+  background: #f3e5f5;
+}
+
+.result-item .label {
+  font-weight: 500;
+  color: #666;
+}
+
+.result-item .value {
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.tip {
+  margin-top: 16px;
+  padding: 10px;
+  background: #fffde7;
+  border-radius: 6px;
+  border-left: 4px solid #ffc107;
+}
+
+.info {
+  margin-top: 12px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* 底部对比表格 */
+.footer {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.footer h3 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.comparison-table {
+  margin-top: 16px;
+}
+
+/* 问题解决方案对比 */
+.problem-solution {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.problem, .solution {
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.problem {
+  background: #ffebee;
+}
+
+.solution {
+  background: #e8f5e9;
+}
+
+.problem h5,
+.solution h5 {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  max-width: none;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-btn {
+    text-align: center;
+  }
+
+  .problem-solution {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 1.6rem;
+  }
+}
