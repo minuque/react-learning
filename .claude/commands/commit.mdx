@@ -1,0 +1,76 @@
+# Git 提交命令
+
+用于快速提交当前更改到 Git 仓库。
+
+## 使用方式
+
+- `/commit "提交信息"` - 使用自定义提交信息
+- `/commit` - 使用默认提交信息（根据文件变更自动判断类型）
+
+## 提交类型说明
+
+按照 GitHub 开源项目惯例，使用以下类型：
+
+- **feat**: 新功能
+- **fix**: 修复 bug
+- **docs**: 文档更新
+- **style**: 代码格式（不影响功能的改动）
+- **refactor**: 重构（既不是新功能也不是修复bug）
+- **perf**: 性能优化
+- **test**: 测试
+- **build**: 构建系统或外部依赖变更
+- **chore**: 其他不修改源代码或测试文件的变更
+- **revert**: 回滚之前的提交
+
+## 执行步骤
+
+<SlashCommand>
+# 提交代码到Git仓库
+
+## 获取用户输入的提交信息
+$COMMIT_MSG = ""
+
+#if $ARGUMENTS and $ARGUMENTS != ""
+  # 设置用户提供的提交信息
+  $COMMIT_MSG = $ARGUMENTS
+#else
+  # 检查git状态，获取变更文件
+  $GIT_STATUS = Bash("git status --porcelain")
+
+  # 根据变更文件类型自动判断提交类型
+  $CHANGE_TYPE = "chore"
+
+  #if $GIT_STATUS contains "src/" or $GIT_STATUS contains "components/"
+    $CHANGE_TYPE = "feat"
+  #end
+
+  #if $GIT_STATUS contains "test" or $GIT_STATUS contains "__tests__"
+    $CHANGE_TYPE = "test"
+  #end
+
+  #if $GIT_STATUS contains "docs" or $GIT_STATUS contains "README"
+    $CHANGE_TYPE = "docs"
+  #end
+
+  #if $GIT_STATUS contains "fix" or $GIT_STATUS contains "bug"
+    $CHANGE_TYPE = "fix"
+  #end
+
+  # 设置默认提交信息
+  $COMMIT_MSG = $CHANGE_TYPE . ": 更新代码"
+
+  # 让用户确认或修改提交信息
+  # 请确认提交信息: " . $COMMIT_MSG . "，或输入新的提交信息
+#end
+
+## 执行git提交
+Bash("git add -A")
+Bash("git commit -m \"" . $COMMIT_MSG . "\"")
+
+## 显示提交结果
+已成功提交: $COMMIT_MSG
+</SlashCommand>
+
+---
+
+**提示**: 提交信息应使用中文，简要说明改动内容。
