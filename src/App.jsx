@@ -93,12 +93,12 @@ function App() {
             <tr>
               <td>条件渲染</td>
               <td>v-if / v-show</td>
-              <td>{condition && JSX}</td>
+              <td>condition &amp;&amp; JSX</td>
             </tr>
             <tr>
               <td>列表渲染</td>
               <td>v-for</td>
-              <td>{arr.map()}</td>
+              <td>arr.map()</td>
             </tr>
           </tbody>
         </table>
@@ -108,3 +108,4 @@ function App() {
 }
 
 export default App
+// test

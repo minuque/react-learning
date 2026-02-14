@@ -23,10 +23,12 @@ export default function AutomaticBatching() {
   const [flag, setFlag] = useState(false)
   const [renderCount, setRenderCount] = useState(0)
 
-  // 记录渲染次数
+  // 记录渲染次数（只在开发环境显示）
   useEffect(() => {
-    setRenderCount(prev => prev + 1)
-  })
+    if (import.meta.env.DEV) {
+      setRenderCount(prev => prev + 1)
+    }
+  }, [])
 
   const handleClick = () => {
     /**
