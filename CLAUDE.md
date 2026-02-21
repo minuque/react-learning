@@ -42,4 +42,8 @@ npm run lint         # 运行 ESLint
 - 不使用外部状态管理库（Redux、Zustand 等）
 - 组件使用 JSX 语法
 - 条件渲染：`{condition && <Component />}`
-- 列表渲染：`{array.map(item => <Item key={item.id} />)}`
+
+## 注意事项
+- 使用中文回复，除了部分英文名词
+- 每次回复结束带个“喵”结尾
+- 每次代码变动结束后，需要提示是否使用 /commit 指令
