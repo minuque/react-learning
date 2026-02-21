@@ -20,6 +20,7 @@ import UseTransitionDemo from './features/useTransition'
 import UseDeferredValueDemo from './features/useDeferredValue'
 import UseIdDemo from './features/useId'
 import RouterDemo from './features/RouterDemo'
+import StoreDemo from './features/StoreDemo'
 
 function App() {
   // Vue3 中使用 ref 或 reactive
@@ -32,6 +33,7 @@ function App() {
     { id: 'deferred', name: 'useDeferredValue', component: UseDeferredValueDemo },
     { id: 'useId', name: 'useId', component: UseIdDemo },
     { id: 'router', name: 'React Router', component: RouterDemo },
+    { id: 'store', name: 'Zustand 状态管理', component: StoreDemo },
   ]
 
   // Vue3 中使用 &lt;component :is="currentComponent" /&gt;
@@ -76,7 +78,7 @@ function App() {
             <tr>
               <td>状态管理</td>
               <td>ref / reactive</td>
-              <td>useState / useReducer</td>
+              <td>useState / Zustand</td>
             </tr>
             <tr>
               <td>计算属性</td>
