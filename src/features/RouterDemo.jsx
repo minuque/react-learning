@@ -121,7 +121,7 @@ function UserLayout() {
           个人资料
         </NavLink>
         <NavLink to="/user-center/settings" className={({ isActive }) => isActive ? 'active' : ''}>
-          设置({ isActive })
+          设置
         </NavLink>
       </nav>
 

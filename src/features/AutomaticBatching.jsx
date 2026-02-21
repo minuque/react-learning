@@ -26,6 +26,7 @@ export default function AutomaticBatching() {
   // 记录渲染次数（只在开发环境显示）
   useEffect(() => {
     if (import.meta.env.DEV) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRenderCount(prev => prev + 1)
     }
   }, [])
