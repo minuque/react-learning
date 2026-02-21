@@ -11,6 +11,7 @@
  */
 
 import { useState } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 
 // 导入 React 18 特性演示组件
@@ -18,6 +19,7 @@ import AutomaticBatching from './features/AutomaticBatching'
 import UseTransitionDemo from './features/useTransition'
 import UseDeferredValueDemo from './features/useDeferredValue'
 import UseIdDemo from './features/useId'
+import RouterDemo from './features/RouterDemo'
 
 function App() {
   // Vue3 中使用 ref 或 reactive
@@ -29,6 +31,7 @@ function App() {
     { id: 'transition', name: 'useTransition', component: UseTransitionDemo },
     { id: 'deferred', name: 'useDeferredValue', component: UseDeferredValueDemo },
     { id: 'useId', name: 'useId', component: UseIdDemo },
+    { id: 'router', name: 'React Router', component: RouterDemo },
   ]
 
   // Vue3 中使用 &lt;component :is="currentComponent" /&gt;
@@ -99,6 +102,11 @@ function App() {
               <td>列表渲染</td>
               <td>v-for</td>
               <td>arr.map()</td>
+            </tr>
+            <tr>
+              <td>路由管理</td>
+              <td>vue-router</td>
+              <td>react-router-dom</td>
             </tr>
           </tbody>
         </table>
