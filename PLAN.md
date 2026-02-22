@@ -1,4 +1,5 @@
 ### 2026-02-22
+- [x] 添加 husky git hooks 配置，更新 CLAUDE.md
 - [x] 更新 CLAUDE.md 提交相关说明
 
 ### 2026-02-21
